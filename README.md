@@ -1,6 +1,10 @@
 # pyimagesort
 Sort image & video files, remove duplicates
 
+### Download
+
+https://github.com/monospacesoftware/pyimagesort/releases
+
 ### Features
 
 * Capable of processing jpg, png, mov, avi, mp4, wmv, m4v.
