@@ -1,0 +1,11 @@
+Pillow
+imagehash
+imutils
+opencv-python
+Numpy
+tqdm
+scipy
+numpy
+piexif
+ocrd-pyexiftool
+ZODB
