@@ -1,59 +1,59 @@
 # pyimagesort
-Sort image & video files, remove duplicates
+Classifique arquivos de imagem e vídeo, remova duplicatas
 
-### Download
+### Baixar
 
 https://github.com/monospacesoftware/pyimagesort/releases
 
-### Features
+### Recursos
 
-* Capable of processing jpg, png, mov, avi, mp4, wmv, m4v.
-* Sorts files into destination directory, creating sub-directories for year and month.
-* Files are named using the oldest timestamp found on the file, for example `/sorted/2017/08/20170801-193758-0.jpg`
-* Uses filesystem and all available EXIF timestamps to attempt to determine the original (oldest) timestamp
-* Duplicates images are detected using by fuzzy match, with rotation. 
-* Images that have been resized, rotated, very slightly changed, or are almost identical, will be considered matching.
-* Always keeps the highest resolution version of matching images.
-* If 2 images match and have the same resolution, will keep the HDR version.
-* Will preserve the EXIF from the oldest image, even if the oldest was lower resolution and not kept.
-* Only deletes duplicate images if an exact match was detected. Otherwise images are backed up to a trash directory.
-* Ignores directories starting with . (dot).
-* Removes directories emptied as a result of sorting.
+* Capaz de processar jpg, png, mov, avi, mp4, wmv, m4v.
+* Classifica os arquivos no diretório de destino, criando subdiretórios por ano e mês.
+* Os arquivos são nomeados usando o carimbo de data / hora mais antigo encontrado no arquivo, por exemplo, `/ classificado / 2017/08 / 20170801-193758-0.jpg`
+* Utiliza o sistema de arquivos e todos os carimbos de data / hora EXIF ​​disponíveis para tentar determinar o carimbo de data / hora original (mais antigo)
+* As imagens duplicadas são detectadas usando-se por correspondência difusa, com rotação.
+* As imagens que foram redimensionadas, giradas, muito ligeiramente alteradas ou são quase idênticas serão consideradas correspondentes.
+* Mantém sempre a versão de resolução mais alta das imagens correspondentes.
+* Se duas imagens corresponderem e tiverem a mesma resolução, manterá a versão HDR.
+* Preservará o EXIF ​​da imagem mais antiga, mesmo que a mais antiga tenha resolução mais baixa e não seja mantida.
+* Exclui imagens duplicadas apenas se uma correspondência exata foi detectada. Caso contrário, é feito o backup das imagens em um diretório da lixeira.
+* Ignora diretórios começando com. (ponto).
+* Remove diretórios esvaziados como resultado da classificação.
 
-### Requirements
+### Requisitos
 
-* Python 3.6+
-* [exiftool](https://www.sno.phy.queensu.ca/~phil/exiftool/)
+* Python 3.6 ou superior
+* [exiftool] (https://www.sno.phy.queensu.ca/~phil/exiftool/)
 
-### Installation
+### Instalação
 
-* Unzip to any directory
+* Descompacte em qualquer diretório
 * `pip install -r requirements.txt`
 
-### Usage
+### Uso
 
-`sort.py destination source [source ...]`
+`fonte de destino sort.py [fonte ...]`
 
-* `destination` is the full path to a directory to sort images into
-* `source` are full path to directories containing images to process
+* `destination` é o caminho completo para um diretório para classificar as imagens
+* `source` é o caminho completo para diretórios que contêm imagens para processar
 
-### Notes
+### Notas
 
-* A directory called `.imagesort/` will be created in your `destination` directory, use to store the image database.
-* Duplicates images will be backed up to `.imagesort/trash`.  You may delete these as desired.
-* Upon startup, the database is checked for consistency with the `destination` directory, and created or fixed based on images this directory contains.
-* You should try to avoid modifying the `destination` directory once images have been sorted.
-* You can adjust the fuzzy match threshold by changing SIMILAR_IMAGE_HASH_DIST in ImageSorter.py.
-  * Range 0-1024, default 3
-  * 0 = Exact match
-  * 3 is conservative, you may want to go as high as 5 or 6. The higher you go the more false matches you'll get and risk losing images you may want to keep.
-  
+* Um diretório chamado `.imagesort /` será criado no diretório `destination`, usado para armazenar o banco de dados de imagens.
+* As imagens duplicadas serão copiadas para `.imagesort / trash`. Você pode excluí-los conforme desejado.
+* Na inicialização, o banco de dados é verificado quanto à consistência com o diretório `destination` e criado ou corrigido com base nas imagens que este diretório contém.
+* Você deve tentar evitar modificar o diretório `destination` depois que as imagens forem classificadas.
+* Você pode ajustar o limite da correspondência difusa alterando SIMILAR_IMAGE_HASH_DIST no ImageSorter.py.
+  * Faixa 0-1024, padrão 3
+  * 0 = Correspondência exata
+  * 3 é conservador, você pode ir até 5 ou 6. Quanto mais alto, mais correspondências falsas você terá e corre o risco de perder as imagens que deseja manter.
+  
 
-### Known Bugs, TODOs
+### Bugs conhecidos, TODOs
 
-* Automatic rotation to proper orientation
-* Video files do not use fuzzy match
+* Rotação automática para orientação adequada
+* Os arquivos de vídeo não usam correspondência difusa
 
-### Author
+### Autor
 
-[Paul Cowan](paul@monospacesoftware.com) ([Monospace Software LLC](https://monospacesoftware.com/))
+[Paul Cowan] (paul@monospacesoftware.com) ([Monospace Software LLC] (https://monospacesoftware.com/))
